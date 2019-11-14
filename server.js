@@ -1,7 +1,7 @@
 const express = require("express");
 const next = require("next");
 
-const dev = process.env !== "production";
+const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
@@ -11,7 +11,7 @@ app.prepare().then(() => {
   server.use(express.static("public"));
 
   server.get("/", (req, res) => {
-    app.render(req, res, "index");
+    app.render(req, res, "/index");
   });
 
   server.get("*", (req, res) => {

@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "nodemon": "nodemon"
+    "nodemon": "nodemon",
+    "start": "NODE_ENV=production next build && NODE_ENV=production node server.js"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
